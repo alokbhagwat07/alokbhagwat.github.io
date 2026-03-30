@@ -13,11 +13,20 @@
     padding:0;
     box-sizing:border-box;
     font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
 }
 
 body{
-    background:linear-gradient(135deg,#0f172a,#020617);
     color:white;
+    background:linear-gradient(-45deg,#0f172a,#020617,#1e293b,#020617);
+    background-size:400% 400%;
+    animation:bg 10s ease infinite;
+}
+
+@keyframes bg{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
 
 /* Navbar */
@@ -25,7 +34,7 @@ nav{
     display:flex;
     justify-content:space-between;
     padding:20px 50px;
-    background:rgba(0,0,0,0.6);
+    background:rgba(0,0,0,0.5);
     backdrop-filter:blur(10px);
     position:sticky;
     top:0;
@@ -37,7 +46,6 @@ nav a{
     color:white;
     margin-left:20px;
     text-decoration:none;
-    transition:0.3s;
 }
 
 nav a:hover{color:#38bdf8;}
@@ -53,20 +61,19 @@ nav a:hover{color:#38bdf8;}
 }
 
 .hero img{
-    width:150px;
+    width:140px;
     border-radius:50%;
-    margin-bottom:20px;
-    box-shadow:0 0 30px #38bdf8;
+    box-shadow:0 0 40px #38bdf8;
 }
 
 .hero h2{
     font-size:45px;
+    margin-top:15px;
 }
 
 .typing{
     color:#38bdf8;
     font-size:22px;
-    margin-top:10px;
 }
 
 /* Button */
@@ -75,49 +82,41 @@ nav a:hover{color:#38bdf8;}
     padding:12px 25px;
     background:#38bdf8;
     border:none;
-    color:black;
-    cursor:pointer;
     border-radius:8px;
-    transition:0.3s;
-}
-
-.btn:hover{
-    background:white;
+    cursor:pointer;
 }
 
 /* Sections */
-section{padding:60px;}
-
-/* Cards */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+section{
+    padding:60px;
 }
 
+/* Glass Card */
 .card{
     background:rgba(255,255,255,0.05);
     padding:20px;
     border-radius:15px;
     backdrop-filter:blur(10px);
-    transition:0.3s;
-}
-
-.card img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-    border-radius:10px;
-    margin-bottom:10px;
-    transition:0.3s;
+    transition:0.4s;
 }
 
 .card:hover{
     transform:translateY(-10px) scale(1.05);
 }
 
-.card:hover img{
-    transform:scale(1.1);
+/* Grid */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+/* Images */
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
 }
 
 /* Skills */
@@ -125,16 +124,31 @@ section{padding:60px;}
     display:inline-block;
     background:#38bdf8;
     color:black;
-    padding:8px 12px;
+    padding:8px;
     margin:5px;
     border-radius:5px;
 }
 
-/* Footer */
-footer{
+/* Stats */
+.stats{
     text-align:center;
-    padding:20px;
-    background:#020617;
+}
+
+.stats h2{
+    font-size:40px;
+    color:#38bdf8;
+}
+
+/* Animation */
+.hidden{
+    opacity:0;
+    transform:translateY(30px);
+    transition:all 1s;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
 }
 </style>
 </head>
@@ -142,125 +156,132 @@ footer{
 <body>
 
 <nav>
-    <h1>Alok.dev</h1>
-    <div>
-        <a href="#">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </div>
+<h1>Alok.dev</h1>
+<div>
+<a href="#">Home</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
 </nav>
 
 <!-- Hero -->
 <div class="hero">
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
 
-    <!-- 👉 Replace with your photo -->
-    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile">
+<h2>Hello, I'm Alok 👋</h2>
+<div class="typing" id="typing"></div>
 
-    <h2>Hello, I'm <span style="color:#38bdf8;">Alok 👋</span></h2>
-
-    <div class="typing" id="typing"></div>
-
-    <button class="btn" onclick="scrollToProjects()">View My Work</button>
+<button class="btn" onclick="scrollToSection('projects')">View Work</button>
 </div>
 
 <!-- Skills -->
-<section>
+<section class="hidden">
 <h2>🛠 Skills</h2>
 <div class="skills">
-    <span>Python</span>
-    <span>Data Analysis</span>
-    <span>SQL</span>
-    <span>Arduino</span>
-    <span>ESP32</span>
-    <span>Machine Learning</span>
+<span>Python</span>
+<span>Data Engineering</span>
+<span>SQL</span>
+<span>Arduino</span>
+<span>ESP32</span>
+<span>Machine Learning</span>
+</div>
+</section>
+
+<!-- Featured Project -->
+<section class="hidden">
+<h2>🔥 Featured Project</h2>
+<div class="card">
+<h2>Smart Mandi Price System</h2>
+<p>
+Real-time crop price system using FastAPI, data scraping,
+and visualization dashboard for Maharashtra.
+</p>
+<ul>
+<li>✔ Live API Integration</li>
+<li>✔ 700K+ Data Handling</li>
+<li>✔ District Filtering</li>
+<li>✔ Data Analysis</li>
+</ul>
+</div>
+</section>
+
+<!-- Stats -->
+<section class="hidden">
+<h2>📊 My Impact</h2>
+<div class="grid">
+<div class="card stats"><h2>5+</h2><p>Projects</p></div>
+<div class="card stats"><h2>700K+</h2><p>Data Processed</p></div>
+<div class="card stats"><h2>3+</h2><p>Robotics Systems</p></div>
+<div class="card stats"><h2>2+</h2><p>Competitions</p></div>
 </div>
 </section>
 
 <!-- Projects -->
-<section id="projects">
+<section id="projects" class="hidden">
 <h2>🚀 Projects</h2>
 
 <div class="grid">
 
-    <div class="card">
-        <img src="https://images.pexels.com/photos/257904/pexels-photo-257904.jpeg">
-        <h3>FM Broadcast System</h3>
-        <p>Designed transmitter & receiver circuit.</p>
-    </div>
+<div class="card">
+<img src="https://images.pexels.com/photos/257904/pexels-photo-257904.jpeg">
+<h3>FM Broadcast</h3>
+</div>
 
-    <div class="card">
-        <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg">
-        <h3>AI Health Chatbot</h3>
-        <p>ML-based disease prediction system.</p>
-    </div>
+<div class="card">
+<img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg">
+<h3>AI Chatbot</h3>
+</div>
 
-    <div class="card">
-        <img src="https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg">
-        <h3>Holonomic Robot</h3>
-        <p>Robot with PID control system.</p>
-    </div>
-
-    <div class="card">
-        <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg">
-        <h3>Unemployment Analysis</h3>
-        <p>Data analytics using Python & SQL.</p>
-    </div>
+<div class="card">
+<img src="https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg">
+<h3>Robot System</h3>
+</div>
 
 </div>
 </section>
 
 <!-- Contact -->
-<section id="contact">
+<section id="contact" class="hidden">
 <h2>📩 Contact</h2>
 <p>Email: bhagwatalok72@gmail.com</p>
 <p>GitHub: github.com/alokbhagwat07</p>
 </section>
 
-<footer>
-<p>© 2026 Alok | Built with ❤️</p>
-</footer>
-
-<!-- JavaScript -->
 <script>
-const roles = [
-"Data Engineer 🚀",
-"Python Developer 💻",
-"Robotics Enthusiast 🤖"
-];
+// Typing
+const roles=["Data Engineer 🚀","Python Developer 💻","Robotics Enthusiast 🤖"];
+let i=0,j=0,current="",del=false;
 
-let i = 0;
-let j = 0;
-let current = "";
-let isDeleting = false;
+function type(){
+current=roles[i];
+document.getElementById("typing").innerHTML=current.substring(0,j);
 
-function type() {
-    current = roles[i];
-
-    if (isDeleting) {
-        document.getElementById("typing").innerHTML = current.substring(0, j--);
-    } else {
-        document.getElementById("typing").innerHTML = current.substring(0, j++);
-    }
-
-    if (!isDeleting && j === current.length) {
-        isDeleting = true;
-        setTimeout(type, 1000);
-        return;
-    }
-
-    if (isDeleting && j === 0) {
-        isDeleting = false;
-        i = (i + 1) % roles.length;
-    }
-
-    setTimeout(type, isDeleting ? 50 : 100);
+if(!del && j<current.length) j++;
+else if(del && j>0) j--;
+else{
+del=!del;
+i=(i+1)%roles.length;
 }
 
+setTimeout(type,del?50:100);
+}
 type();
 
-function scrollToProjects(){
-    document.getElementById("projects").scrollIntoView({behavior:"smooth"});
+// Scroll
+function scrollToSection(id){
+document.getElementById(id).scrollIntoView();
 }
+
+// Reveal Animation
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".hidden").forEach(el=>observer.observe(el));
 </script>
 
 </body>
