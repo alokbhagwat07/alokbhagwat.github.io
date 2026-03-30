@@ -86,12 +86,16 @@ nav a:hover{color:#38bdf8;}
     cursor:pointer;
 }
 
+.btn:hover{
+    background:white;
+}
+
 /* Sections */
 section{
     padding:60px;
 }
 
-/* Glass Card */
+/* Card */
 .card{
     background:rgba(255,255,255,0.05);
     padding:20px;
@@ -172,7 +176,30 @@ section{
 <div class="typing" id="typing"></div>
 
 <button class="btn" onclick="scrollToSection('projects')">View Work</button>
+
+<a href="resume.pdf" download>
+<button class="btn" style="background:#22c55e;color:white;">
+📄 Download Resume
+</button>
+</a>
+
 </div>
+
+<!-- About -->
+<section class="hidden">
+<h2>👨‍💻 About Me</h2>
+<div class="card">
+<p>
+Motivated Electronics and Telecommunication Engineering student skilled in Arduino,
+ESP32, and Python-based data analysis. Experienced in handling large datasets (700K+ rows)
+and building real-time applications.
+</p>
+
+<p style="margin-top:10px;">
+Passionate about Data Engineering, Robotics, and solving real-world problems using technology.
+</p>
+</div>
+</section>
 
 <!-- Skills -->
 <section class="hidden">
@@ -216,6 +243,36 @@ and visualization dashboard for Maharashtra.
 </div>
 </section>
 
+<!-- Education -->
+<section class="hidden">
+<h2>🎓 Education</h2>
+<div class="card">
+<p><strong>B.Tech - Electronics & Telecommunication</strong></p>
+<p>Savitribai Phule Pune University (2023 - 2027)</p>
+<p>CGPA: 8.95</p>
+<br>
+<p>HSC: 83.33% | SSC: 92.60%</p>
+</div>
+</section>
+
+<!-- Achievements -->
+<section class="hidden">
+<h2>🏆 Achievements</h2>
+<div class="grid">
+
+<div class="card">
+<h3>ROBOCON 2025</h3>
+<p>Participated at IIT Delhi robotics competition.</p>
+</div>
+
+<div class="card">
+<h3>Techfest IIT Bombay</h3>
+<p>Worked on innovation and robotics challenges.</p>
+</div>
+
+</div>
+</section>
+
 <!-- Projects -->
 <section id="projects" class="hidden">
 <h2>🚀 Projects</h2>
@@ -224,17 +281,17 @@ and visualization dashboard for Maharashtra.
 
 <div class="card">
 <img src="https://images.pexels.com/photos/257904/pexels-photo-257904.jpeg">
-<h3>FM Broadcast</h3>
+<h3>FM Broadcast System</h3>
 </div>
 
 <div class="card">
 <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg">
-<h3>AI Chatbot</h3>
+<h3>AI Health Chatbot</h3>
 </div>
 
 <div class="card">
 <img src="https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg">
-<h3>Robot System</h3>
+<h3>Holonomic Robot</h3>
 </div>
 
 </div>
@@ -243,12 +300,19 @@ and visualization dashboard for Maharashtra.
 <!-- Contact -->
 <section id="contact" class="hidden">
 <h2>📩 Contact</h2>
+
 <p>Email: bhagwatalok72@gmail.com</p>
-<p>GitHub: github.com/alokbhagwat07</p>
+<p>Phone: +91-7756824241</p>
+
+<p>
+<a href="https://github.com/alokbhagwat07" target="_blank">GitHub</a> |
+<a href="https://linkedin.com/in/alok-bhagwat-805104295" target="_blank">LinkedIn</a>
+</p>
+
 </section>
 
 <script>
-// Typing
+// Typing Animation
 const roles=["Data Engineer 🚀","Python Developer 💻","Robotics Enthusiast 🤖"];
 let i=0,j=0,current="",del=false;
 
