@@ -76,7 +76,7 @@ nav a:hover{color:#38bdf8;}
     font-size:22px;
 }
 
-/* Button */
+/* Buttons */
 .btn{
     margin-top:20px;
     padding:12px 25px;
@@ -95,7 +95,7 @@ section{
     padding:60px;
 }
 
-/* Card */
+/* Cards */
 .card{
     background:rgba(255,255,255,0.05);
     padding:20px;
@@ -123,14 +123,25 @@ section{
     border-radius:10px;
 }
 
-/* Skills */
+/* 🔥 Improved Skills */
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
 .skills span{
-    display:inline-block;
-    background:#38bdf8;
+    background:linear-gradient(135deg,#38bdf8,#22c55e);
+    padding:10px 15px;
+    border-radius:20px;
+    font-size:14px;
     color:black;
-    padding:8px;
-    margin:5px;
-    border-radius:5px;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.skills span:hover{
+    transform:scale(1.1);
 }
 
 /* Stats */
@@ -182,7 +193,6 @@ section{
 📄 Download Resume
 </button>
 </a>
-
 </div>
 
 <!-- About -->
@@ -190,13 +200,9 @@ section{
 <h2>👨‍💻 About Me</h2>
 <div class="card">
 <p>
-Motivated Electronics and Telecommunication Engineering student skilled in Arduino,
-ESP32, and Python-based data analysis. Experienced in handling large datasets (700K+ rows)
-and building real-time applications.
-</p>
-
-<p style="margin-top:10px;">
-Passionate about Data Engineering, Robotics, and solving real-world problems using technology.
+Electronics and Telecommunication Engineering student passionate about Data Engineering,
+Robotics, and IoT systems. Skilled in Python, Arduino, and ESP32 with experience in building
+real-world engineering solutions.
 </p>
 </div>
 </section>
@@ -206,70 +212,13 @@ Passionate about Data Engineering, Robotics, and solving real-world problems usi
 <h2>🛠 Skills</h2>
 <div class="skills">
 <span>Python</span>
-<span>Data Engineering</span>
+<span>Data Analysis</span>
 <span>SQL</span>
 <span>Arduino</span>
 <span>ESP32</span>
 <span>Machine Learning</span>
-</div>
-</section>
-
-<!-- Featured Project -->
-<section class="hidden">
-<h2>🔥 Featured Project</h2>
-<div class="card">
-<h2>Smart Mandi Price System</h2>
-<p>
-Real-time crop price system using FastAPI, data scraping,
-and visualization dashboard for Maharashtra.
-</p>
-<ul>
-<li>✔ Live API Integration</li>
-<li>✔ 700K+ Data Handling</li>
-<li>✔ District Filtering</li>
-<li>✔ Data Analysis</li>
-</ul>
-</div>
-</section>
-
-<!-- Stats -->
-<section class="hidden">
-<h2>📊 My Impact</h2>
-<div class="grid">
-<div class="card stats"><h2>5+</h2><p>Projects</p></div>
-<div class="card stats"><h2>700K+</h2><p>Data Processed</p></div>
-<div class="card stats"><h2>3+</h2><p>Robotics Systems</p></div>
-<div class="card stats"><h2>2+</h2><p>Competitions</p></div>
-</div>
-</section>
-
-<!-- Education -->
-<section class="hidden">
-<h2>🎓 Education</h2>
-<div class="card">
-<p><strong>B.Tech - Electronics & Telecommunication</strong></p>
-<p>Savitribai Phule Pune University (2023 - 2027)</p>
-<p>CGPA: 8.95</p>
-<br>
-<p>HSC: 83.33% | SSC: 92.60%</p>
-</div>
-</section>
-
-<!-- Achievements -->
-<section class="hidden">
-<h2>🏆 Achievements</h2>
-<div class="grid">
-
-<div class="card">
-<h3>ROBOCON 2025</h3>
-<p>Participated at IIT Delhi robotics competition.</p>
-</div>
-
-<div class="card">
-<h3>Techfest IIT Bombay</h3>
-<p>Worked on innovation and robotics challenges.</p>
-</div>
-
+<span>IoT Systems</span>
+<span>Problem Solving</span>
 </div>
 </section>
 
@@ -280,20 +229,33 @@ and visualization dashboard for Maharashtra.
 <div class="grid">
 
 <div class="card">
-<img src="https://images.pexels.com/photos/257904/pexels-photo-257904.jpeg">
-<h3>FM Broadcast System</h3>
-</div>
-
-<div class="card">
-<img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg">
-<h3>AI Health Chatbot</h3>
+<img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg">
+<h3>Data Analysis Project</h3>
+<p>Analyzed real-world datasets using Python, Pandas, and SQL to extract meaningful insights and visualizations.</p>
 </div>
 
 <div class="card">
 <img src="https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg">
 <h3>Holonomic Robot</h3>
+<p>Developed omni-directional robot using PID control, ESP32, and wireless communication modules.</p>
 </div>
 
+<div class="card">
+<img src="https://images.pexels.com/photos/257904/pexels-photo-257904.jpeg">
+<h3>Animal Repeller System</h3>
+<p>Built Arduino-based ultrasonic system for automatic detection and repelling animals.</p>
+</div>
+
+</div>
+</section>
+
+<!-- Education -->
+<section class="hidden">
+<h2>🎓 Education</h2>
+<div class="card">
+<p><strong>B.Tech - Electronics & Telecommunication</strong></p>
+<p>Savitribai Phule Pune University (2023 - 2027)</p>
+<p>CGPA: 8.95</p>
 </div>
 </section>
 
