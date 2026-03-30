@@ -12,11 +12,11 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
-    background: linear-gradient(135deg,#0f172a,#020617);
+    background:linear-gradient(135deg,#0f172a,#020617);
     color:white;
 }
 
@@ -25,30 +25,25 @@ nav{
     display:flex;
     justify-content:space-between;
     padding:20px 50px;
-    background:rgba(0,0,0,0.5);
-    backdrop-filter: blur(10px);
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(10px);
     position:sticky;
     top:0;
 }
 
-nav h1{
-    color:#38bdf8;
-}
+nav h1{color:#38bdf8;}
 
 nav a{
     color:white;
     margin-left:20px;
     text-decoration:none;
-    transition:0.3s;
 }
 
-nav a:hover{
-    color:#38bdf8;
-}
+nav a:hover{color:#38bdf8;}
 
 /* Hero */
 .hero{
-    height:90vh;
+    height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -56,18 +51,21 @@ nav a:hover{
     text-align:center;
 }
 
+.hero img{
+    width:150px;
+    border-radius:50%;
+    margin-bottom:20px;
+    box-shadow:0 0 30px #38bdf8;
+}
+
 .hero h2{
     font-size:45px;
-    animation: fadeIn 2s ease-in;
 }
 
-.hero span{
+.typing{
     color:#38bdf8;
-}
-
-.hero p{
+    font-size:22px;
     margin-top:10px;
-    animation: fadeIn 3s ease-in;
 }
 
 /* Button */
@@ -79,7 +77,6 @@ nav a:hover{
     color:black;
     cursor:pointer;
     border-radius:8px;
-    transition:0.3s;
 }
 
 .btn:hover{
@@ -87,9 +84,7 @@ nav a:hover{
 }
 
 /* Sections */
-section{
-    padding:60px;
-}
+section{padding:60px;}
 
 /* Cards */
 .grid{
@@ -102,12 +97,18 @@ section{
     background:rgba(255,255,255,0.05);
     padding:20px;
     border-radius:15px;
-    backdrop-filter: blur(10px);
+    backdrop-filter:blur(10px);
     transition:0.3s;
 }
 
+.card img{
+    width:100%;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
 .card:hover{
-    transform:translateY(-10px) scale(1.03);
+    transform:translateY(-10px) scale(1.05);
 }
 
 /* Skills */
@@ -118,7 +119,6 @@ section{
     padding:8px 12px;
     margin:5px;
     border-radius:5px;
-    font-size:14px;
 }
 
 /* Footer */
@@ -126,12 +126,6 @@ footer{
     text-align:center;
     padding:20px;
     background:#020617;
-}
-
-/* Animation */
-@keyframes fadeIn{
-    from{opacity:0; transform:translateY(20px);}
-    to{opacity:1; transform:translateY(0);}
 }
 </style>
 </head>
@@ -142,8 +136,6 @@ footer{
     <h1>Alok.dev</h1>
     <div>
         <a href="#">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
     </div>
@@ -151,95 +143,117 @@ footer{
 
 <!-- Hero -->
 <div class="hero">
-    <h2>Hello, I'm <span>Alok 👋</span></h2>
-    <p>Electronics Engineer | Python Developer | Robotics Enthusiast</p>
-    <button class="btn" onclick="document.getElementById('projects').scrollIntoView()">View My Work</button>
+
+    <!-- 👉 ADD YOUR PHOTO HERE -->
+    <img src="https://via.placeholder.com/150" alt="Profile">
+
+    <h2>Hello, I'm <span style="color:#38bdf8;">Alok 👋</span></h2>
+
+    <!-- Typing Animation -->
+    <div class="typing" id="typing"></div>
+
+    <button class="btn" onclick="scrollToProjects()">View My Work</button>
 </div>
 
-<!-- About -->
-<section id="about">
-    <h2>👨‍💻 About Me</h2>
-    <p>
-        Motivated Electronics and Telecommunication Engineering student skilled in Arduino, ESP32,
-        and Python-based data analysis. I love building real-world solutions using IoT, automation,
-        and machine learning. Passionate about solving practical problems with technology.
-    </p>
-</section>
-
 <!-- Skills -->
-<section id="skills">
-    <h2>🛠 Skills</h2>
-    <div class="skills">
-        <span>Python</span>
-        <span>NumPy</span>
-        <span>Pandas</span>
-        <span>Matplotlib</span>
-        <span>SQL</span>
-        <span>Arduino</span>
-        <span>ESP32</span>
-        <span>Data Analysis</span>
-        <span>Problem Solving</span>
-        <span>Quick Learner</span>
-    </div>
+<section>
+<h2>🛠 Skills</h2>
+<div class="skills">
+    <span>Python</span>
+    <span>Data Analysis</span>
+    <span>SQL</span>
+    <span>Arduino</span>
+    <span>ESP32</span>
+    <span>Machine Learning</span>
+</div>
 </section>
 
 <!-- Projects -->
 <section id="projects">
-    <h2>🚀 Projects</h2>
-    <div class="grid">
+<h2>🚀 Projects</h2>
 
-        <div class="card">
-            <h3>FM Broadcast System</h3>
-            <p>Designed and implemented FM transmitter & receiver circuit.</p>
-        </div>
+<div class="grid">
 
-        <div class="card">
-            <h3>AI Health Chatbot</h3>
-            <p>Built ML-based system for disease prediction using Python.</p>
-        </div>
-
-        <div class="card">
-            <h3>Holonomic Robot</h3>
-            <p>Developed robot with PID control and omni-directional movement.</p>
-        </div>
-
-        <div class="card">
-            <h3>Unemployment Analysis</h3>
-            <p>Analyzed Indian unemployment data using Python & SQL with visualization.</p>
-        </div>
-
-        <div class="card">
-            <h3>Animal Repeller System</h3>
-            <p>Arduino-based ultrasonic system for automatic animal detection.</p>
-        </div>
-
-    </div>
-</section>
-
-<!-- Education -->
-<section>
-    <h2>🎓 Education</h2>
     <div class="card">
-        <p><strong>B.Tech - Electronics & Telecommunication</strong></p>
-        <p>Savitribai Phule Pune University (2023 - 2027)</p>
-        <p>CGPA: 8.95</p>
+        <img src="https://source.unsplash.com/400x300/?electronics" />
+        <h3>FM Broadcast System</h3>
+        <p>Designed transmitter & receiver circuit.</p>
     </div>
+
+    <div class="card">
+        <img src="https://source.unsplash.com/400x300/?ai" />
+        <h3>AI Health Chatbot</h3>
+        <p>ML-based disease prediction system.</p>
+    </div>
+
+    <div class="card">
+        <img src="https://source.unsplash.com/400x300/?robotics" />
+        <h3>Holonomic Robot</h3>
+        <p>Robot with PID control system.</p>
+    </div>
+
+    <div class="card">
+        <img src="https://source.unsplash.com/400x300/?data" />
+        <h3>Unemployment Analysis</h3>
+        <p>Data analytics using Python & SQL.</p>
+    </div>
+
+</div>
 </section>
 
 <!-- Contact -->
 <section id="contact">
-    <h2>📩 Contact</h2>
-    <p>Email: bhagwatalok72@gmail.com</p>
-    <p>Phone: +91-7756824241</p>
-    <p>
-        <a href="https://github.com/alokbhagwat07" target="_blank">GitHub</a> |
-        <a href="https://linkedin.com/in/alok-bhagwat-805104295" target="_blank">LinkedIn</a>
-    </p>
+<h2>📩 Contact</h2>
+<p>Email: bhagwatalok72@gmail.com</p>
+<p>GitHub: github.com/alokbhagwat07</p>
 </section>
 
 <footer>
-    <p>© 2026 Alok Bhagwat | Built with ❤️</p>
+<p>© 2026 Alok | Built with ❤️</p>
 </footer>
+
+<!-- JavaScript -->
+<script>
+const roles = [
+"Data Engineer 🚀",
+"Python Developer 💻",
+"Robotics Enthusiast 🤖"
+];
+
+let i = 0;
+let j = 0;
+let current = "";
+let isDeleting = false;
+
+function type() {
+    current = roles[i];
+
+    if (isDeleting) {
+        document.getElementById("typing").innerHTML = current.substring(0, j--);
+    } else {
+        document.getElementById("typing").innerHTML = current.substring(0, j++);
+    }
+
+    if (!isDeleting && j === current.length) {
+        isDeleting = true;
+        setTimeout(type, 1000);
+        return;
+    }
+
+    if (isDeleting && j === 0) {
+        isDeleting = false;
+        i = (i + 1) % roles.length;
+    }
+
+    setTimeout(type, isDeleting ? 50 : 100);
+}
+
+type();
+
+function scrollToProjects(){
+    document.getElementById("projects").scrollIntoView({behavior:"smooth"});
+}
+</script>
 
 </body>
 </html>
