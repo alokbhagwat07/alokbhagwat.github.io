@@ -37,6 +37,7 @@ nav a{
     color:white;
     margin-left:20px;
     text-decoration:none;
+    transition:0.3s;
 }
 
 nav a:hover{color:#38bdf8;}
@@ -77,6 +78,7 @@ nav a:hover{color:#38bdf8;}
     color:black;
     cursor:pointer;
     border-radius:8px;
+    transition:0.3s;
 }
 
 .btn:hover{
@@ -103,12 +105,19 @@ section{padding:60px;}
 
 .card img{
     width:100%;
+    height:180px;
+    object-fit:cover;
     border-radius:10px;
     margin-bottom:10px;
+    transition:0.3s;
 }
 
 .card:hover{
     transform:translateY(-10px) scale(1.05);
+}
+
+.card:hover img{
+    transform:scale(1.1);
 }
 
 /* Skills */
@@ -144,12 +153,11 @@ footer{
 <!-- Hero -->
 <div class="hero">
 
-    <!-- 👉 ADD YOUR PHOTO HERE -->
-    <img src="https://via.placeholder.com/150" alt="Profile">
+    <!-- 👉 Replace with your photo -->
+    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile">
 
     <h2>Hello, I'm <span style="color:#38bdf8;">Alok 👋</span></h2>
 
-    <!-- Typing Animation -->
     <div class="typing" id="typing"></div>
 
     <button class="btn" onclick="scrollToProjects()">View My Work</button>
@@ -175,25 +183,25 @@ footer{
 <div class="grid">
 
     <div class="card">
-        <img src="https://source.unsplash.com/400x300/?electronics" />
+        <img src="https://images.pexels.com/photos/257904/pexels-photo-257904.jpeg">
         <h3>FM Broadcast System</h3>
         <p>Designed transmitter & receiver circuit.</p>
     </div>
 
     <div class="card">
-        <img src="https://source.unsplash.com/400x300/?ai" />
+        <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg">
         <h3>AI Health Chatbot</h3>
         <p>ML-based disease prediction system.</p>
     </div>
 
     <div class="card">
-        <img src="https://source.unsplash.com/400x300/?robotics" />
+        <img src="https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg">
         <h3>Holonomic Robot</h3>
         <p>Robot with PID control system.</p>
     </div>
 
     <div class="card">
-        <img src="https://source.unsplash.com/400x300/?data" />
+        <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg">
         <h3>Unemployment Analysis</h3>
         <p>Data analytics using Python & SQL.</p>
     </div>
