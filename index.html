@@ -30,6 +30,7 @@ left:0;
 width:100%;
 height:100%;
 z-index:-1;
+pointer-events:none;
 }
 
 nav{
@@ -152,17 +153,7 @@ a:hover{text-decoration:underline;}
 <section class="hidden">
 <h2>👨‍💻 About Me</h2>
 <div class="card">
-<p>
-I am an Electronics and Telecommunication Engineering student with a strong interest in 
-Data Engineering, Data Science, and Robotics. I have hands-on experience working with 
-Python, SQL, Arduino, and ESP32 to build real-world systems.
-</p>
-<p style="margin-top:10px;">
-I enjoy solving practical problems using data-driven approaches and embedded systems.
-</p>
-<p style="margin-top:10px;">
-Recently, I completed a Data Science Internship at Prodigy Infotech.
-</p>
+<p>I am an Electronics and Telecommunication Engineering student with interest in Data Science & Robotics.</p>
 </div>
 </section>
 
@@ -171,15 +162,7 @@ Recently, I completed a Data Science Internship at Prodigy Infotech.
 <h2>💼 Internship</h2>
 <div class="card">
 <h3>Data Science Intern - Prodigy Infotech</h3>
-<p>
-Worked with real-world datasets using Python. Performed data cleaning, preprocessing, and visualization using Pandas and Matplotlib.
-</p>
-<ul style="margin-top:10px;">
-<li>✔ Data Cleaning & Preprocessing</li>
-<li>✔ Data Visualization</li>
-<li>✔ Feature Extraction</li>
-<li>✔ Analytical Thinking</li>
-</ul>
+<p>Worked on real-world datasets using Python, Pandas, Matplotlib.</p>
 </div>
 </section>
 
@@ -192,7 +175,6 @@ Worked with real-world datasets using Python. Performed data cleaning, preproces
 <span>Arduino</span>
 <span>ESP32</span>
 <span>Machine Learning</span>
-<span>IoT Systems</span>
 </div>
 </section>
 
@@ -204,42 +186,21 @@ Worked with real-world datasets using Python. Performed data cleaning, preproces
 <div class="card">
 <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg">
 <h3>Unemployment Analysis</h3>
-<p>Data analysis using Python & SQL.</p>
-<a href="https://github.com/alokbhagwat07" target="_blank">🔗 View on GitHub</a>
+<a href="https://github.com/alokbhagwat07" target="_blank">GitHub</a>
 </div>
 
 <div class="card">
 <img src="https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg">
 <h3>Holonomic Robot</h3>
-<p>PID controlled omni-directional robot.</p>
-<a href="https://github.com/alokbhagwat07" target="_blank">🔗 View on GitHub</a>
+<a href="https://github.com/alokbhagwat07" target="_blank">GitHub</a>
 </div>
 
 <div class="card">
 <img src="https://images.pexels.com/photos/257904/pexels-photo-257904.jpeg">
 <h3>Animal Repeller</h3>
-<p>Ultrasonic IoT system.</p>
-<a href="https://github.com/alokbhagwat07" target="_blank">🔗 View on GitHub</a>
+<a href="https://github.com/alokbhagwat07" target="_blank">GitHub</a>
 </div>
 
-</div>
-</section>
-
-<!-- ACHIEVEMENTS -->
-<section class="hidden">
-<h2>🏆 Achievements</h2>
-<div class="card">
-<p>✔ Participated in IIT Delhi Technical Event</p>
-<p>✔ Participated in IIT Bombay Tech Fest</p>
-</div>
-</section>
-
-<!-- CERTIFICATIONS -->
-<section class="hidden">
-<h2>📜 Certifications</h2>
-<div class="card">
-<p>✔ Data Science Internship - Prodigy Infotech</p>
-<p>✔ Python Data Analysis Certification</p>
 </div>
 </section>
 
@@ -247,8 +208,7 @@ Worked with real-world datasets using Python. Performed data cleaning, preproces
 <section class="hidden">
 <h2>🎓 Education</h2>
 <div class="card">
-<p><strong>B.Tech - Electronics & Telecommunication</strong></p>
-<p>Savitribai Phule Pune University (2023 - 2027)</p>
+<p>B.Tech - ENTC | SPPU</p>
 <p>CGPA: 8.95</p>
 </div>
 </section>
@@ -257,10 +217,9 @@ Worked with real-world datasets using Python. Performed data cleaning, preproces
 <section id="contact" class="hidden">
 <h2>📩 Contact</h2>
 <p>Email: bhagwatalok72@gmail.com</p>
-<p>Phone: +91-7756824241</p>
 <p>
 <a href="https://github.com/alokbhagwat07" target="_blank">GitHub</a> |
-<a href="https://linkedin.com/in/alok-bhagwat-805104295" target="_blank">LinkedIn</a>
+<a href="https://linkedin.com" target="_blank">LinkedIn</a>
 </p>
 </section>
 
@@ -268,9 +227,8 @@ Worked with real-world datasets using Python. Performed data cleaning, preproces
 
 <script>
 // typing
-const roles=["Data Engineer 🚀","Python Developer 💻","Robotics Enthusiast 🤖"];
+const roles=["Data Engineer 🚀","Robotics 🤖","AI Enthusiast 🔥"];
 let i=0,j=0,del=false;
-
 function type(){
 let current=roles[i];
 document.getElementById("typing").innerHTML=current.substring(0,j);
@@ -288,208 +246,93 @@ document.getElementById(id).scrollIntoView();
 
 // reveal
 const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting) entry.target.classList.add("show");
+entries.forEach(e=>{
+if(e.isIntersecting) e.target.classList.add("show");
 });
 });
 document.querySelectorAll(".hidden").forEach(el=>observer.observe(el));
 
-// 3D
-const scene=new THREE.Scene();
-const camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
-const renderer=new THREE.WebGLRenderer({canvas:bg3d,alpha:true});
 
+// ===== 3D ADVANCED =====
+const scene=new THREE.Scene();
+scene.fog=new THREE.Fog(0x020617,10,50);
+
+const camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
+const renderer=new THREE.WebGLRenderer({
+canvas:document.getElementById("bg3d"),
+alpha:true
+});
 renderer.setSize(window.innerWidth,window.innerHeight);
-camera.position.z=6;
+camera.position.z=8;
+
+// lights
+scene.add(new THREE.PointLight(0xffffff,1).position.set(5,5,5));
 
 // particles
+const particlesGeo=new THREE.BufferGeometry();
+const count=1500;
+const arr=new Float32Array(count*3);
+for(let i=0;i<count*3;i++){arr[i]=(Math.random()-0.5)*50;}
+particlesGeo.setAttribute('position',new THREE.BufferAttribute(arr,3));
+const particles=new THREE.Points(particlesGeo,new THREE.PointsMaterial({size:0.05,color:0x38bdf8}));
+scene.add(particles);
+
+// objects
 const objs=[];
-for(let i=0;i<25;i++){
-let geo=new THREE.IcosahedronGeometry(Math.random()*0.5);
-let mat=new THREE.MeshStandardMaterial({color:0x38bdf8,wireframe:true});
+for(let i=0;i<20;i++){
+let geo=new THREE.BoxGeometry();
+let mat=new THREE.MeshStandardMaterial({color:0x22c55e,wireframe:true});
 let mesh=new THREE.Mesh(geo,mat);
-mesh.position.set((Math.random()-0.5)*12,(Math.random()-0.5)*12,(Math.random()-0.5)*12);
+mesh.position.set((Math.random()-0.5)*20,(Math.random()-0.5)*20,(Math.random()-0.5)*20);
 scene.add(mesh);
 objs.push(mesh);
 }
 
+// glowing spheres
+for(let i=0;i<10;i++){
+let s=new THREE.Mesh(new THREE.SphereGeometry(0.3),
+new THREE.MeshStandardMaterial({color:0x38bdf8,emissive:0x38bdf8}));
+s.position.set((Math.random()-0.5)*15,(Math.random()-0.5)*15,(Math.random()-0.5)*15);
+scene.add(s);
+objs.push(s);
+}
+
+// ring
+const ring=new THREE.Mesh(new THREE.TorusGeometry(3,0.1,16,100),
+new THREE.MeshStandardMaterial({color:0xffffff,wireframe:true}));
+scene.add(ring);
+
+// grid
+scene.add(new THREE.GridHelper(50,50,0x38bdf8,0x38bdf8));
+
 // robot
 const robot=new THREE.Group();
-const body=new THREE.Mesh(new THREE.BoxGeometry(1,1.5,0.5),new THREE.MeshStandardMaterial({color:0x22c55e}));
-const head=new THREE.Mesh(new THREE.BoxGeometry(0.6,0.6,0.6),new THREE.MeshStandardMaterial({color:0x38bdf8}));
-head.position.y=1.2;
-robot.add(body);
-robot.add(head);
+robot.add(new THREE.Mesh(new THREE.BoxGeometry(1.2,1.8,0.6),
+new THREE.MeshStandardMaterial({color:0x22c55e,emissive:0x22c55e})));
 scene.add(robot);
 
-// light
-const light=new THREE.PointLight(0xffffff,1);
-light.position.set(5,5,5);
-scene.add(light);
+// mouse
+let mx=0,my=0;
+document.addEventListener("mousemove",e=>{
+mx=(e.clientX/window.innerWidth-0.5)*2;
+my=(e.clientY/window.innerHeight-0.5)*2;
+});
 
-// animation
+// animate
 function animate(){
 requestAnimationFrame(animate);
-objs.forEach(o=>{o.rotation.x+=0.005;o.rotation.y+=0.005;});
-robot.rotation.y+=0.01;
+
+objs.forEach(o=>{o.rotation.x+=0.003;o.rotation.y+=0.003;});
+particles.rotation.y+=0.0008;
+ring.rotation.x+=0.003;
+ring.rotation.y+=0.002;
+
+camera.position.x+=(mx*2-camera.position.x)*0.02;
+camera.position.y+=(-my*2-camera.position.y)*0.02;
+
 renderer.render(scene,camera);
 }
 animate();
-</script>
-
-<script>
-// SCENE SETUP
-const scene = new THREE.Scene();
-
-const camera = new THREE.PerspectiveCamera(
-    75,
-    window.innerWidth/window.innerHeight,
-    0.1,
-    1000
-);
-
-const renderer = new THREE.WebGLRenderer({
-    canvas: bg3d,
-    alpha:true
-});
-
-renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.z = 8;
-
-// LIGHTS
-const light1 = new THREE.PointLight(0xffffff, 1);
-light1.position.set(5,5,5);
-scene.add(light1);
-
-const light2 = new THREE.PointLight(0x38bdf8, 1);
-light2.position.set(-5,-5,-5);
-scene.add(light2);
-
-// 🌌 PARTICLES (STARS)
-const particlesGeometry = new THREE.BufferGeometry();
-const particlesCount = 1500;
-
-const posArray = new Float32Array(particlesCount * 3);
-
-for(let i=0;i<particlesCount*3;i++){
-    posArray[i] = (Math.random() - 0.5) * 50;
-}
-
-particlesGeometry.setAttribute(
-    'position',
-    new THREE.BufferAttribute(posArray, 3)
-);
-
-const particlesMaterial = new THREE.PointsMaterial({
-    size: 0.05,
-    color: 0x38bdf8
-});
-
-const particlesMesh = new THREE.Points(
-    particlesGeometry,
-    particlesMaterial
-);
-
-scene.add(particlesMesh);
-
-// 🔷 MULTIPLE OBJECTS
-const objects = [];
-
-function createObject(geo, color){
-    const mat = new THREE.MeshStandardMaterial({
-        color: color,
-        wireframe: true
-    });
-
-    const mesh = new THREE.Mesh(geo, mat);
-
-    mesh.position.set(
-        (Math.random()-0.5)*20,
-        (Math.random()-0.5)*20,
-        (Math.random()-0.5)*20
-    );
-
-    scene.add(mesh);
-    objects.push(mesh);
-}
-
-// ADD VARIOUS SHAPES
-for(let i=0;i<10;i++){
-    createObject(new THREE.BoxGeometry(), 0x22c55e);
-    createObject(new THREE.SphereGeometry(0.5), 0x38bdf8);
-    createObject(new THREE.TorusGeometry(0.6,0.2,16,100), 0xffffff);
-}
-
-// 🤖 ROBOT (IMPROVED)
-const robot = new THREE.Group();
-
-// body
-const body = new THREE.Mesh(
-    new THREE.BoxGeometry(1.2,1.8,0.6),
-    new THREE.MeshStandardMaterial({color:0x22c55e})
-);
-
-// head
-const head = new THREE.Mesh(
-    new THREE.BoxGeometry(0.7,0.7,0.7),
-    new THREE.MeshStandardMaterial({color:0x38bdf8})
-);
-head.position.y = 1.4;
-
-// eyes
-const eyeGeo = new THREE.SphereGeometry(0.08);
-const eyeMat = new THREE.MeshBasicMaterial({color:0xffffff});
-
-const eye1 = new THREE.Mesh(eyeGeo, eyeMat);
-eye1.position.set(-0.2,1.4,0.4);
-
-const eye2 = new THREE.Mesh(eyeGeo, eyeMat);
-eye2.position.set(0.2,1.4,0.4);
-
-robot.add(body, head, eye1, eye2);
-scene.add(robot);
-
-// 🖱️ MOUSE INTERACTION
-let mouseX = 0;
-let mouseY = 0;
-
-document.addEventListener("mousemove",(e)=>{
-    mouseX = (e.clientX/window.innerWidth - 0.5)*2;
-    mouseY = (e.clientY/window.innerHeight - 0.5)*2;
-});
-
-// ANIMATION
-function animate(){
-    requestAnimationFrame(animate);
-
-    // rotate shapes
-    objects.forEach(obj=>{
-        obj.rotation.x += 0.003;
-        obj.rotation.y += 0.003;
-    });
-
-    // particles movement
-    particlesMesh.rotation.y += 0.0008;
-
-    // robot animation
-    robot.rotation.y += 0.01;
-    robot.position.y = Math.sin(Date.now()*0.002)*0.5;
-
-    // mouse effect
-    camera.position.x += (mouseX*2 - camera.position.x)*0.02;
-    camera.position.y += (-mouseY*2 - camera.position.y)*0.02;
-    camera.lookAt(scene.position);
-
-    renderer.render(scene,camera);
-}
-animate();
-
-// RESPONSIVE
-window.addEventListener('resize',()=>{
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    camera.aspect = window.innerWidth/window.innerHeight;
-    camera.updateProjectionMatrix();
-});
 </script>
 
 </body>
