@@ -43,19 +43,15 @@ position:sticky;
 top:0;
 }
 
-nav a{
-color:white;
-text-decoration:none;
-transition:0.3s;
-}
+nav a{color:white;text-decoration:none;}
 nav a:hover{color:#38bdf8;}
 
 .hero{
 height:100vh;
 display:flex;
+flex-direction:column;
 justify-content:center;
 align-items:center;
-flex-direction:column;
 text-align:center;
 }
 
@@ -66,7 +62,6 @@ box-shadow:0 0 40px #38bdf8;
 }
 
 .hero h2{font-size:45px;margin-top:15px;}
-
 .typing{color:#38bdf8;font-size:22px;}
 
 .btn{
@@ -162,15 +157,29 @@ I am an Electronics and Telecommunication Engineering student with a strong inte
 Data Engineering, Data Science, and Robotics. I have hands-on experience working with 
 Python, SQL, Arduino, and ESP32 to build real-world systems.
 </p>
-
 <p style="margin-top:10px;">
-I enjoy solving practical problems using data-driven approaches and embedded systems. 
-My work includes data analysis, IoT automation, and robotics systems.
+I enjoy solving practical problems using data-driven approaches and embedded systems.
 </p>
-
 <p style="margin-top:10px;">
-Completed Data Science Internship at Prodigy Infotech.
+Recently, I completed a Data Science Internship at Prodigy Infotech.
 </p>
+</div>
+</section>
+
+<!-- INTERNSHIP -->
+<section class="hidden">
+<h2>💼 Internship</h2>
+<div class="card">
+<h3>Data Science Intern - Prodigy Infotech</h3>
+<p>
+Worked with real-world datasets using Python. Performed data cleaning, preprocessing, and visualization using Pandas and Matplotlib.
+</p>
+<ul style="margin-top:10px;">
+<li>✔ Data Cleaning & Preprocessing</li>
+<li>✔ Data Visualization</li>
+<li>✔ Feature Extraction</li>
+<li>✔ Analytical Thinking</li>
+</ul>
 </div>
 </section>
 
@@ -190,33 +199,26 @@ Completed Data Science Internship at Prodigy Infotech.
 <!-- PROJECTS -->
 <section id="projects" class="hidden">
 <h2>🚀 Projects</h2>
-
 <div class="grid">
 
 <div class="card">
 <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg">
 <h3>Unemployment Analysis</h3>
-<p>
-Analyzed unemployment trends using Python & SQL with visualization.
-</p>
+<p>Data analysis using Python & SQL.</p>
 <a href="https://github.com/alokbhagwat07" target="_blank">🔗 View on GitHub</a>
 </div>
 
 <div class="card">
 <img src="https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg">
 <h3>Holonomic Robot</h3>
-<p>
-Developed omni-directional robot using PID and ESP32.
-</p>
+<p>PID controlled omni-directional robot.</p>
 <a href="https://github.com/alokbhagwat07" target="_blank">🔗 View on GitHub</a>
 </div>
 
 <div class="card">
 <img src="https://images.pexels.com/photos/257904/pexels-photo-257904.jpeg">
-<h3>Animal Repeller System</h3>
-<p>
-Ultrasonic system for agriculture using Arduino.
-</p>
+<h3>Animal Repeller</h3>
+<p>Ultrasonic IoT system.</p>
 <a href="https://github.com/alokbhagwat07" target="_blank">🔗 View on GitHub</a>
 </div>
 
@@ -232,18 +234,34 @@ Ultrasonic system for agriculture using Arduino.
 </div>
 </section>
 
+<!-- CERTIFICATIONS -->
+<section class="hidden">
+<h2>📜 Certifications</h2>
+<div class="card">
+<p>✔ Data Science Internship - Prodigy Infotech</p>
+<p>✔ Python Data Analysis Certification</p>
+</div>
+</section>
+
+<!-- EDUCATION -->
+<section class="hidden">
+<h2>🎓 Education</h2>
+<div class="card">
+<p><strong>B.Tech - Electronics & Telecommunication</strong></p>
+<p>Savitribai Phule Pune University (2023 - 2027)</p>
+<p>CGPA: 8.95</p>
+</div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" class="hidden">
 <h2>📩 Contact</h2>
-
 <p>Email: bhagwatalok72@gmail.com</p>
 <p>Phone: +91-7756824241</p>
-
 <p>
 <a href="https://github.com/alokbhagwat07" target="_blank">GitHub</a> |
 <a href="https://linkedin.com/in/alok-bhagwat-805104295" target="_blank">LinkedIn</a>
 </p>
-
 </section>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
@@ -256,11 +274,9 @@ let i=0,j=0,del=false;
 function type(){
 let current=roles[i];
 document.getElementById("typing").innerHTML=current.substring(0,j);
-
 if(!del && j<current.length) j++;
 else if(del && j>0) j--;
 else{del=!del;i=(i+1)%roles.length;}
-
 setTimeout(type,del?50:100);
 }
 type();
@@ -282,10 +298,11 @@ document.querySelectorAll(".hidden").forEach(el=>observer.observe(el));
 const scene=new THREE.Scene();
 const camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
 const renderer=new THREE.WebGLRenderer({canvas:bg3d,alpha:true});
+
 renderer.setSize(window.innerWidth,window.innerHeight);
 camera.position.z=6;
 
-// shapes
+// particles
 const objs=[];
 for(let i=0;i<25;i++){
 let geo=new THREE.IcosahedronGeometry(Math.random()*0.5);
@@ -310,6 +327,7 @@ const light=new THREE.PointLight(0xffffff,1);
 light.position.set(5,5,5);
 scene.add(light);
 
+// animation
 function animate(){
 requestAnimationFrame(animate);
 objs.forEach(o=>{o.rotation.x+=0.005;o.rotation.y+=0.005;});
